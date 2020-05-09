@@ -5,9 +5,11 @@ using UnityEngine.UI;
 public class InputManager : MonoBehaviour
 {
     public GameObject textObject;
-    private Text textComponent;
-    private TaskGenerator taskGenerator;
 
+    private Text textComponent;
+    private ScoreManager scoreManager;
+    private TaskGenerator taskGenerator;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +17,7 @@ public class InputManager : MonoBehaviour
         textComponent.text = "";
 
         taskGenerator = gameObject.GetComponent<TaskGenerator>();
+        scoreManager = gameObject.GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -38,11 +41,10 @@ public class InputManager : MonoBehaviour
                 break;
             //TO DO
             case Inputs.CHECK:
-                if (int.TryParse(textComponent.text, out int result) && taskGenerator.CheckAnswer(result))
-                { 
-                    textComponent.text = "";
-                }
-
+                bool correctAnswer = int.TryParse(textComponent.text, out int result) && taskGenerator.CheckAnswer(result);
+                scoreManager.UpdateScore(correctAnswer);
+                textComponent.text = "";
+                
                 break;
             default:
                 if (Int32.TryParse(input, out int res))

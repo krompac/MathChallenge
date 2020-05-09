@@ -782,6 +782,7 @@ GameObject:
   - component: {fileID: 1119127185}
   - component: {fileID: 1119127186}
   - component: {fileID: 1119127187}
+  - component: {fileID: 1119127188}
   m_Layer: 5
   m_Name: InputPanel
   m_TagString: Untagged
@@ -907,8 +908,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75972fe71762a0c4c8c90324c5842786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskResult: {fileID: 1711325743}
   taskText: {fileID: 79327732}
+--- !u!114 &1119127188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119127180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6006653afef3134bbcf9ded385e7551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 1797621014}
 --- !u!1 &1537610085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1138,7 +1151,7 @@ GameObject:
   - component: {fileID: 1797621015}
   - component: {fileID: 1797621014}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
